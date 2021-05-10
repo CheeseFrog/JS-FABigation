@@ -2,29 +2,32 @@
 
 if (document.readyState === "complete") HFAB(); else window.addEventListener("load", HFAB);
 
-function HFAB() {
+function HFAB() {	
 	var L = document.createElement("div");
 	L.className = "FABdo"; L.id = "LFAB";
 	L.setAttribute("X",0);
 	var R = document.createElement("div");
 	R.className = "FABdo"; R.id = "RFAB";
 	R.setAttribute("X",0);
-	var oldX = 0;
+	var oldY = 0, oldX = 0, Z=122;
 
 	function wheel(e) {
-		if (!e.deltaY && oldX==e.clientX && window.history.length>1)
-		    if (e.deltaX>122 && (L.getAttribute("X")==0)) {
+		if (!e.deltaY && oldX==e.clientX && window.history.length>1) {
+		    if (e.deltaX>Z && (R.getAttribute("X")==0)) {
 			R.setAttribute("X",1); L.setAttribute("X",0);
 			setTimeout(function(){R.setAttribute("X",0);}, 700);
-			window.history.forward();e.preventDefault();
+			window.history.forward();
+		    e.preventDefault();
 		    }
 		else
-			if (e.deltaX<-122 && (R.getAttribute("X")==0)) {
+			if (e.deltaX<-Z && (L.getAttribute("X")==0)) {
 			L.setAttribute("X",1); R.setAttribute("X",0);
 			setTimeout(function(){L.setAttribute("X",0);}, 700);
-			window.history.back();e.preventDefault();
+			window.history.back();
+			e.preventDefault();
 			}
-		oldX=e.clientX
+		}
+		oldX = e.clientX
 	}
 
 	window.addEventListener('wheel', wheel, {passive: false});
@@ -47,6 +50,8 @@ function HFAB() {
 	background: black;
 	text-align: center;
 	transition: transform .15s, opacity .15s;
+
+	opacity:0;
 }
 
 .FABdo:before {
@@ -60,9 +65,12 @@ function HFAB() {
 	clip-path: polygon(50% 0%, 100% 86.6%, 0% 86.6%);
 }
 
+.FABdo[X="1"] {
+	opacity:.5;
+}
+
 #LFAB, #RFAB {
 	top: 38vh;
-	opacity: 0;
 	pointer-events: none;
 }
 
@@ -78,12 +86,10 @@ function HFAB() {
 
 #LFAB[X="1"] {
 	transform: translateX(0%) rotate(-90deg);
-	opacity:0.5;
 }
 
 #RFAB[X="1"] {
 	transform: translateX(0%) rotate(90deg);
-	opacity:0.5;
 }
 `
 	document.head.appendChild(css);
