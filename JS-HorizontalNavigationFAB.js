@@ -1,7 +1,7 @@
 // Add this : <script src="./JS-HorizontalNavigationFAB.js"></script>
 
 if (!document.getElementById("LFAB")) {
-	if (document.readyState === "complete") HFAB(); else window.addEventListener("load", HFAB);
+	if (document.readyState === "complete" || document.readyState === "interactive") HFAB(); else window.addEventListener("load", HFAB);
 }
 
 function HFAB() {
@@ -38,20 +38,19 @@ function HFAB() {
 		all: initial;
 		z-index: 9999;
 		cursor: pointer;
-		user-select: none;
-		-moz-user-select: none;
 		-webkit-tap-highlight-color: transparent;
+		-moz-user-select: none;
+		user-select: none;
 		position: fixed;
 		border-radius: 100%;
 		padding: 2.5vh;
 		width: 8vmin;
 		height: 8vmin;
-		margin: 5vmin;
 		background: black;
 		text-align: center;
 		transition: transform .15s, opacity .15s;
-
-		opacity:0;
+		border: 5vh solid transparent;
+		background-clip: padding-box;
 	}
 
 	.FABdo:before {
@@ -69,9 +68,26 @@ function HFAB() {
 		opacity:.5;
 	}
 
+	.FABdo:hover {
+		opacity: .75;
+	}
+
+	.FABdo:active {
+		box-shadow: inset 0 0 0 3px var(--highlight, highlight);
+		opacity: .99;
+	}
+
+	.FABdo:not(:hover):not(:active):not([X="1"]) {
+	pointer-events: none;
+	opacity: 0;
+	}
+
+/**/
+	body {overscroll-behavior-x: none !important;}
+
 	#LFAB, #RFAB {
 		top: calc(41vmin - 2.5vh);
-		pointer-events: none;
+		xpointer-events: none;
 	}
 
 	#LFAB {
@@ -79,17 +95,17 @@ function HFAB() {
 		transform: translateX(-100%) rotate(-90deg);
 	}
 
+	#LFAB[X="1"] {
+		transform: translateX(0) rotate(-90deg);
+	}
+
 	#RFAB {
 		right:0;
 		transform: translateX(100%) rotate(90deg);
 	}
 
-	#LFAB[X="1"] {
-		transform: translateX(0%) rotate(-90deg);
-	}
-
 	#RFAB[X="1"] {
-		transform: translateX(0%) rotate(90deg);
+		transform: translateX(0) rotate(90deg);
 	}
 	`
 	document.head.appendChild(css);
