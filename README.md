@@ -12,4 +12,5 @@ Additional vertical gesture (refresh / scroll-to-top) addon (needs both scripts 
 <script src="./JS-VFABaddon.js"></script>
 ```
 See it in action here: https://cheesefrog.github.io/Suryoyo.Simple./
+
 Search for it in the Firefox and MS Edge extension stores.
