@@ -7,5 +7,8 @@ Just add JS-HorizontalNavigationFAB.js to the header of your webpage.
 ```
 <script src="./JS-HorizontalNavigationFAB.js"></script>
 ```
-
+Additional vertical gesture (refresh / scroll-to-top) addon (needs both scripts to run).
+```
+<script src="./JS-VFABaddon.js"></script>
+```
 See it in action here: https://cheesefrog.github.io/Suryoyo.Simple./
