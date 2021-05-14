@@ -1,7 +1,6 @@
 # JS-FABigation
 
 Add horizontal scroll gestures (defaults to page navigation) in vanilla JS
-
 with simple HTML5 / JS implementation Floating Action Button indicators.
 
 Just add JS-HorizontalNavigationFAB.js to the header of your webpage.
