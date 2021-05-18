@@ -1,10 +1,10 @@
 # JS-FABigation
 
-Touchscreen (swipe) & Touchpad (two-finger scroll) gestures.
+Touchscreen (swipe) & Touchpad (two-finger scroll) gestures.  
 Works with mousewheel also.
 
-**Left / Right** for navigation **Back / Forward**.
-**>Up / Down** for navigation **pull-to-Refresh / scroll-to-Top**.
+**Left / Right** for navigation **Back / Forward**.  
+**Up / Down** for navigation **pull-to-Refresh / scroll-to-Top**.
 
 *Please consider [donating](https://paypal.me/auyousef)*.
 
