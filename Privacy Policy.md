@@ -8,7 +8,7 @@
 
 ## Third party services
 
-FABigation works as an extension / addon-on / plug-in to unaffiliated web browsers using the *WebExtensions* API (Application Programming Interface). Compatability is not guaranteed.
+*FABigation* works as an extension / addon-on / plug-in to unaffiliated web browsers using the *WebExtensions* API (Application Programming Interface). Compatability is not guaranteed.
 
 *FABigation* uses the *Chromium* or *WebExtensions Storage Sync* API for storing user's settings.
 
