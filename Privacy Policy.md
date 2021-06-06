@@ -10,6 +10,6 @@
 
 *FABigation* works as an extension / addon-on / plug-in to unaffiliated web browsers using the *WebExtensions* API (Application Programming Interface). Compatability is not guaranteed.
 
-*FABigation* uses the *Chromium* or *WebExtensions Storage Sync* API for storing user's settings.
+*FABigation* uses the *Chromium* or *WebExtensions Storage Sync* API for storing users' settings.
 
 Donations are encouraged but optional, and do not affect functionality. Donations are processed by a third party service (eg. *PayPal*) which have their own Privacy Policy.
