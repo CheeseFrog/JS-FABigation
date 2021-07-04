@@ -5,7 +5,7 @@ var FABkey = {
 	"TSS": 100, // touchscreen sensitivity
 	"TPS": 100, // touchpad sensitivity
 	"Auto": 1, // automatic gestures
-	"Sticky": 1, // sticky scroll-to-top
+	"Sticky": 0, // sticky scroll-to-top
 	"Hori": 1, // enable horizontal gestures
 	"Vert": 1 // enable vertical gestures
 }
@@ -73,6 +73,7 @@ function FABigation() { window.FABigation = function() {}
 
 	function sticky() {isScroll(); var IO = +!atTop(100); if (FABkey["Sticky"] && IO!=B.getAttribute("IO")) B.setAttribute("IO", IO)}
 	window.addEventListener("scroll", sticky, {passive: true})
+	sticky();
 
 	function isScroll() {clearTimeout(isScroll.on); isScroll.on=setTimeout(function(){isScroll.on=0},10)}
 
